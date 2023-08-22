@@ -1,9 +1,8 @@
 from .Contato import Contato
 from unidecode import unidecode
-from src.errors.ListaFazia import ListaFazia
-from src.errors.error_handler import error_handler
-from src.errors.UsuarioJaCadastrado import UsuarioJaCadastrado
-from src.errors.ContatoNaoEncontrado import ContatoNaoEncontrado
+from errors.ListaFazia import ListaFazia
+from errors.UsuarioJaCadastrado import UsuarioJaCadastrado
+from errors.ContatoNaoEncontrado import ContatoNaoEncontrado
 
 class Lista:
 
@@ -11,17 +10,20 @@ class Lista:
         self.lista = []
     
     def adicionar_contato(self, contato: Contato):
+        """Adiciona um contato a lista"""
         if contato in self.lista:
             raise UsuarioJaCadastrado(nome=contato.nome)
         self.lista.append(contato)
 
     def exibir_contatos(self):
+        """Exibe todos os contatos da lista"""
         if self.lista == []:
             raise ListaFazia()
         for contato in self.lista:
             print(f"Nome: {contato.nome} Telefone: {contato.telefone}")
 
     def pesquisar_contato(self, nome: str):
+        """Mostra os contatos que tem o nome com as iniciais do nome pesquisado"""
         if self.lista == []:
             raise ListaFazia()
         contatos_encontrados = []

@@ -84,7 +84,3 @@ def test_pesquisar_contato_contato_nao_encontrado():
         lista3.pesquisar_contato(nome="asddf")
 
     assert isinstance(exc_info.value, ContatoNaoEncontrado)
-
-
-
-
