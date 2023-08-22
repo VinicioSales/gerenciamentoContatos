@@ -12,3 +12,8 @@ class Lista:
             raise UsuarioJaCadastrado(nome=contato.nome)
         self.lista.append(contato)
 
+    def exibir_contatos(self):
+        for contato in self.lista:
+            print(f"\nNome: {contato.nome}")
+            print(f"Telefone: {contato.telefone}")
+
