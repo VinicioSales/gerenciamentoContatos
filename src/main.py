@@ -22,10 +22,10 @@ while True:
         contato = Contato(nome=nome, telefone=telefone)
         try:
             lista.adicionar_contato(contato=contato)
+            print("Contato adicionado com sucesso!")
+            print("\n")
         except Exception as erro:
             print(f"Erro: {erro}")
-        print("Contato adicionado com sucesso!")
-        print("\n")
         sleep(2)
 
     if opcao == "2":
